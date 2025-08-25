@@ -9,9 +9,10 @@ export default NextAuth({
     }),
   ],
   callbacks: {
-    async signIn(user, account, profile) {
-      console.log("SIGN IN CALLBACK", { user, account, profile });
-      return true;
-    },
+  async signIn({ user, account, profile }) {
+    console.log("SIGN IN CALLBACK", { user, account, profile });
+    return true;
   },
+},
+
 });

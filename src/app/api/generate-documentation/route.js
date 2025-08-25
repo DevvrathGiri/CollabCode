@@ -30,8 +30,8 @@ export async function POST(request) {
         // Ensure the response doesn't contain the code or markdown
         //documentation = documentation.replace(/```[\s\S]*?```/g, ""); // Remove triple backticks if any
         documentation = documentation.replace(code, "").trim(); // Remove the code if it appears
-        documentation = documentation.replace(language, "").trim(); 
-        documentation = documentation.replace(/`{3}/g, "").replace(/`{3}$/g, "");
+        documentation = documentation.replace(language, "").trim(); //remove Language name (like “JavaScript comments:”).
+        documentation = documentation.replace(/`{3}/g, "").replace(/`{3}$/g, "");// remove Triple backticks (…) if Gemini used Markdown formatting.
 
 
 
